@@ -92,6 +92,14 @@ dotmatrix_crawler_robot/
 └── README.md                        # このファイル
 ```
 
+# Related Projects / 関連プロジェクト
+
+- A wireless remote controller: [dotmatrix_crawler_remote](https://github.com/cubic9com/dotmatrix_crawler_remote) - The wireless remote controller for this crawler robot
+
+\[日本語\]
+
+- 無線リモートコントローラー: [dotmatrix_crawler_remote](https://github.com/cubic9com/dotmatrix_crawler_remote) - このクローラーロボット用の無線リモートコントローラー
+
 # License / ライセンス
 
 Copyright (C) 2025, cubic9com All rights reserved.
