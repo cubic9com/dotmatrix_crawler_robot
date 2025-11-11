@@ -6,6 +6,8 @@ This project implements a crawler robot that receives movement commands via [ESP
 
 このプロジェクトでは、[ESP-NOWプロトコル](https://www.espressif.com/en/solutions/low-power-solutions/esp-now) を介して移動コマンドを受信し、16x16 LED ドットマトリックスにアニメーション化された方向矢印を表示するクローラーロボットを実装します。
 
+![video](video.gif)
+
 # Hardware Requirements / ハードウェア要件
 
 ## Components / コンポーネント
@@ -14,6 +16,7 @@ This project implements a crawler robot that receives movement commands via [ESP
 - Motor Driver: [Toshiba TB6612FNG dual motor driver](https://aliexpress.com/item/1005005973846875.html)
 - Crawler Kit: [TP101](https://ja.aliexpress.com/item/1005002052435803.html)
 - Dot-Matrix Display: [16x16 WS2812B LED dot-matrix panel](https://aliexpress.com/item/4000544584524.html)
+- Rechargeable Ni-MH AA Battery x 4 (4.8V)
 
 \[日本語\]
 
@@ -21,24 +24,29 @@ This project implements a crawler robot that receives movement commands via [ESP
 - モータードライバー: [東芝 TB6612FNG デュアルモータードライバー](https://aliexpress.com/item/1005005973846875.html)
 - クローラーキット: [TP101](https://ja.aliexpress.com/item/1005002052435803.html)
 - ドットマトリックスディスプレイ: [16x16 WS2812B LEDドットマトリックスパネル](https://aliexpress.com/item/4000544584524.html)
+- ニッケル水素充電池 x 4 (4.8V)
 
 ## Pin Connections / ピン接続
 
-### Motor Driver (TB6612FNG) /　モータードライバー (TB6612FNG)
-| Function | ESP32-C6 Pin |
-|----------|--------------|
-| PWMA     | D0           |
-| AIN2     | D1           |
-| AIN1     | D2           |
-| STBY     | D10          |
-| BIN1     | D3           |
-| BIN2     | D4           |
-| PWMB     | D5           |
+| XIAO ESP32-C6 Pin | TB6612FNG Pin  | dot-matrix display Pin  | Battery Pin |
+| ----------------- | -------------- | ----------------------- | ----------- |
+| D0                | PWMA           | -                       | -           |
+| D1                | AIN2           | -                       | -           |
+| D2                | AIN1           | -                       | -           |
+| D3                | BIN1           | -                       | -           |
+| D4                | BIN2           | -                       | -           |
+| D5                | PWMB           | -                       | -           |
+| D7                | -              | DIN                     | -           |
+| D8                | -              | -                       | -           |
+| D9                | -              | -                       | -           |
+| D10               | STBY           | -                       | -           |
+| 3V3               | VCC            | -                       | -           |
+| GND               | GND            | GND                     | GND         |
+| VBUS              | -              | -                       | VBAT        |
+| -                 | VM             | -                       | VBAT        |
+| -                 | -              | 5V                      | VBAT        |
 
-### LED Dot-Matrix / LEDドットマトリクスパネル
-| Function | ESP32-C6 Pin |
-|----------|--------------|
-| DIN      | D7           |
+![circuit](circuit.jpg)
 
 # Software Requirements / ソフトウェア要件
 
