@@ -46,7 +46,8 @@ This project implements a crawler robot that receives movement commands via [ESP
 | -                 | VM             | -                       | VBAT        |
 | -                 | -              | 5V                      | VBAT        |
 
-![circuit](circuit.jpg)
+![circuit](circuit01.jpg)
+![circuit](circuit02.jpg)
 
 # Software Requirements / ソフトウェア要件
 
