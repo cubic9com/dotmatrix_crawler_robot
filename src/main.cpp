@@ -35,21 +35,19 @@
  * ESP-NOW Message Structure
  */
 typedef struct MessageStruct {
-    uint8_t direction; // Movement direction command
+    Direction direction; // Movement direction command
 } MessageStruct;
 
 /**
  * Global Objects and Variables
  */
 MessageStruct messageData = {
-    .direction = DIRECTION_STOP
+    .direction = Direction::STOP
 };
 LGFX_Sprite arrowSprite;                 // 16x16 sprite for arrow rendering
 MotorController motorController;         // Motor control interface
 LedDisplay ledDisplay;                   // LED matrix interface
 AnimationController animationController; // Animation manager
-
-void handleDirectionChange(uint8_t direction);
 
 /**
  * ESP-NOW Data Reception Callback
@@ -71,44 +69,7 @@ void OnDataRecv(const esp_now_recv_info_t *esp_now_info, const uint8_t *incoming
     // Reset animation to start from first frame for new direction
     animationController.reset();
     // Execute motor control command
-    handleDirectionChange(messageData.direction);
-}
-
-/**
- * Handle Direction Change
- *
- * Translates received direction commands into motor control actions.
- * Each direction command triggers specific motor movements:
- * - STOP: Brake both motors
- * - FORWARD: Both motors forward
- * - BACKWARD: Both motors backward
- * - LEFT: Pivot turn (left motor back, right motor forward)
- * - RIGHT: Pivot turn (right motor back, left motor forward)
- *
- * @param direction Direction command from constants.h
- */
-void handleDirectionChange(uint8_t direction) {
-    switch (direction) {
-    case DIRECTION_STOP:
-        motorController.stop();
-        break;
-    case DIRECTION_FORWARD:
-        motorController.moveForward();
-        break;
-    case DIRECTION_BACKWARD:
-        motorController.moveBackward();
-        break;
-    case DIRECTION_LEFT:
-        motorController.turnLeft();
-        break;
-    case DIRECTION_RIGHT:
-        motorController.turnRight();
-        break;
-    default:
-        // Unknown command: stop for safety
-        motorController.stop();
-        break;
-    }
+    motorController.executeCommand(messageData.direction);
 }
 
 /**
@@ -143,8 +104,8 @@ void setup() {
     motorController.begin();
 
     // Initialize LED matrix sprite and display
-    arrowSprite.setColorDepth(16);                                 // 16-bit color (RGB565)
-    arrowSprite.createSprite(LED_MATRIX_WIDTH, LED_MATRIX_HEIGHT); // Create 16x16 pixel sprite
+    arrowSprite.setColorDepth(16); // 16-bit color (RGB565)
+    arrowSprite.createSprite(ledDisplay.LED_MATRIX_WIDTH, ledDisplay.LED_MATRIX_HEIGHT); // Create 16x16 pixel sprite
     ledDisplay.begin();
 
     // Initialize ESP-NOW wireless communication

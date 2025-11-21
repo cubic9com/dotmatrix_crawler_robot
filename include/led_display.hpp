@@ -3,7 +3,6 @@
 
 #include <FastLED.h>
 #include <LovyanGFX.hpp>
-#include "constants.h"
 
 /**
  * LedDisplay Class
@@ -18,6 +17,10 @@
  */
 class LedDisplay {
 public:
+    // LED matrix dimensions
+    static constexpr uint8_t LED_MATRIX_HEIGHT = 16;
+    static constexpr uint8_t LED_MATRIX_WIDTH = 16;
+
     LedDisplay() = default;
 
     /**
@@ -58,6 +61,16 @@ public:
     }
 
 private:
+    /**
+     * LED Matrix Configuration
+     */
+    // Data input pin for LED matrix
+    static constexpr uint8_t LED_DIN = D7;
+    // Total number of LEDs in the matrix
+    static constexpr uint16_t LED_MATRIX_NUM_LEDS = LED_MATRIX_WIDTH * LED_MATRIX_HEIGHT;
+    // LED brightness level (0-255, set to ~5% to reduce power consumption)
+    static constexpr uint8_t LED_BRIGHTNESS = 13;
+
     // LED array buffer
     CRGB leds[LED_MATRIX_NUM_LEDS];
 };

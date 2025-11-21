@@ -2,8 +2,8 @@
 #define ANIMATION_CONTROLLER_HPP
 
 #include <LovyanGFX.hpp>
-#include "constants.h"
 #include "arrow_images.h"
+#include "constants.h"
 
 /**
  * AnimationController Class
@@ -18,15 +18,13 @@
  */
 class AnimationController {
 public:
-    AnimationController() : animCounter(0) {}
-
     /**
      * Update animation frame and display arrow
      * 
      * @param sprite LovyanGFX sprite to draw the arrow on
      * @param direction Current movement direction (from constants.h)
      */
-    void update(LGFX_Sprite& sprite, uint8_t direction) {
+    void update(LGFX_Sprite& sprite, Direction direction) {
         animCounter++;
         if (animCounter >= ANIMATION_FRAMES) {
             animCounter = 0;
@@ -34,20 +32,40 @@ public:
 
         // Display arrow based on direction
         switch (direction) {
-        case DIRECTION_FORWARD:
+        case Direction::FORWARD:
             displayArrow(sprite, 0);  // Upward arrow
             break;
-        case DIRECTION_BACKWARD:
+        case Direction::BACKWARD:
             displayArrow(sprite, 1);  // Downward arrow
             break;
-        case DIRECTION_LEFT:
+        case Direction::LEFT:
             displayArrow(sprite, 2);  // Leftward arrow
             break;
-        case DIRECTION_RIGHT:
+        case Direction::RIGHT:
             displayArrow(sprite, 3);  // Rightward arrow
             break;
         default:
-            sprite.clear();  // Stop: clear display
+            sprite.clear();
+            for (int x = 0; x < 16; x++) {
+                for (int y = 0; y < 16; y++) {
+                    switch (rand() % 10) {
+                        case 0:
+                            sprite.setColor(sprite.color565(153, 132, 0));
+                            sprite.drawPixel(x, y);
+                            break;
+                        case 1:
+                            sprite.setColor(sprite.color565(102, 81, 0));
+                            sprite.drawPixel(x, y);
+                            break;
+                        case 2:
+                            sprite.setColor(sprite.color565(51, 30, 0));
+                            sprite.drawPixel(x, y);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
             break;
         }
     }
@@ -63,7 +81,7 @@ private:
     // Number of frames in each animation cycle
     static constexpr uint8_t ANIMATION_FRAMES = 12;
     // Current animation frame (0-11)
-    uint8_t animCounter;
+    uint8_t animCounter = 0;
 
     /**
      * Display a specific arrow frame on the sprite
