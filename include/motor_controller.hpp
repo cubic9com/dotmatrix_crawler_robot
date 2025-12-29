@@ -20,10 +20,10 @@ public:
         uint8_t motorB;
     };
 
-    static constexpr MotorSpeed SPEED_FORWARD = {130, 255};
-    static constexpr MotorSpeed SPEED_BACKWARD = {130, 195};
-    static constexpr MotorSpeed SPEED_TURN_LEFT = {130, 255};
-    static constexpr MotorSpeed SPEED_TURN_RIGHT = {130, 195};
+    static constexpr MotorSpeed SPEED_FORWARD = {255, 255};
+    static constexpr MotorSpeed SPEED_BACKWARD = {255, 255};
+    static constexpr MotorSpeed SPEED_TURN_LEFT = {255, 255};
+    static constexpr MotorSpeed SPEED_TURN_RIGHT = {255, 255};
 
     MotorController() = default;
 

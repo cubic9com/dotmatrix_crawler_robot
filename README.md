@@ -95,11 +95,11 @@ dotmatrix_crawler_robot/
 
 # Related Projects / 関連プロジェクト
 
-- A wireless remote controller: [dotmatrix_crawler_remote](https://github.com/cubic9com/dotmatrix_crawler_remote) - The wireless remote controller for this crawler robot
+- A wireless joystick: [dotmatrix_crawler_joystick](https://github.com/cubic9com/dotmatrix_crawler_joystick) - The wireless joystick for this crawler robot
 
 \[日本語\]
 
-- 無線リモートコントローラー: [dotmatrix_crawler_remote](https://github.com/cubic9com/dotmatrix_crawler_remote) - このクローラーロボット用の無線リモートコントローラー
+- 無線ジョイスティック: [dotmatrix_crawler_joystick](https://github.com/cubic9com/dotmatrix_crawler_joystick) - このクローラーロボット用の無線ジョイスティック
 
 # License / ライセンス
 
