@@ -14,7 +14,7 @@ This project implements a crawler robot that receives movement commands via [ESP
 
 - Microcontroller: [Seeed Studio XIAO ESP32-C6](https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/)
 - Motor Driver: [Toshiba TB6612FNG dual motor driver](https://aliexpress.com/item/1005005973846875.html)
-- Crawler Kit: [TP101](https://ja.aliexpress.com/item/1005002052435803.html)
+- Crawler Kit: [TP101](https://aliexpress.com/item/1005002052435803.html)
 - Dot-Matrix Display: [16x16 WS2812B LED dot-matrix panel](https://aliexpress.com/item/4000544584524.html)
 - Rechargeable Ni-MH AA Battery x 4 (4.8V)
 
@@ -22,7 +22,7 @@ This project implements a crawler robot that receives movement commands via [ESP
 
 - マイクロコントローラー: [Seeed Studio XIAO ESP32-C6](https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/)
 - モータードライバー: [東芝 TB6612FNG デュアルモータードライバー](https://aliexpress.com/item/1005005973846875.html)
-- クローラーキット: [TP101](https://ja.aliexpress.com/item/1005002052435803.html)
+- クローラーキット: [TP101](https://aliexpress.com/item/1005002052435803.html)
 - ドットマトリックスディスプレイ: [16x16 WS2812B LEDドットマトリックスパネル](https://aliexpress.com/item/4000544584524.html)
 - ニッケル水素充電池 x 4 (4.8V)
 
