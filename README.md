@@ -4,7 +4,7 @@ This project implements a crawler robot that receives movement commands via [ESP
 
 \[日本語\]
 
-このプロジェクトでは、[ESP-NOWプロトコル](https://www.espressif.com/en/solutions/low-power-solutions/esp-now) を介して移動コマンドを受信し、16x16 LED ドットマトリックスにアニメーション化された方向矢印を表示するクローラーロボットを実装します。
+[ESP-NOWプロトコル](https://www.espressif.com/en/solutions/low-power-solutions/esp-now) で操作できるクローラーロボットを作ってみました。ジョイスティックから送った指示に合わせて走り、走行方向を16x16のLEDドットマトリックスに表示します。
 
 ![video](video.gif)
 
@@ -28,7 +28,7 @@ This project implements a crawler robot that receives movement commands via [ESP
 
 ## Pin Connections / ピン接続
 
-| XIAO ESP32-C6 Pin | TB6612FNG Pin  | dot-matrix display Pin  | Battery Pin |
+| XIAO ESP32-C6 Pin | TB6612FNG Pin  | Dot-matrix display Pin  | Battery Pin |
 | ----------------- | -------------- | ----------------------- | ----------- |
 | D0                | PWMA           | -                       | -           |
 | D1                | AIN2           | -                       | -           |
@@ -73,8 +73,8 @@ dotmatrix_crawler_robot/
 │   ├── led_display.hpp             # LED dot-matrix display interface
 │   ├── animation_controller.hpp    # Animation manager
 │   └── arrow_images.h              # Pregenerated arrow image data
-├── platformio.ini                   # PlatformIO configuration
-└── README.md                        # This file
+├── platformio.ini                  # PlatformIO configuration
+└── README.md                       # This file
 ```
 
 \[日本語\]
@@ -89,9 +89,29 @@ dotmatrix_crawler_robot/
 │   ├── led_display.hpp             # LEDドットマトリックスディスプレイインターフェース
 │   ├── animation_controller.hpp    # アニメーション管理
 │   └── arrow_images.h              # 事前生成された矢印画像データ
-├── platformio.ini                   # PlatformIO 設定
-└── README.md                        # このファイル
+├── platformio.ini                  # PlatformIOの設定
+└── README.md                       # このファイル
 ```
+
+# How to Change the Images / 画像の変更方法
+
+1. Open the image with [GIMP](https://www.gimp.org/).
+1. Click [File] > [Export As...].
+1. Click [Select File Type (By Extension)].
+1. Select [C source code].
+1. Click [Export] button.
+1. Open the exported file.
+1. Copy the data section enclosed in double quotation marks and replace the corresponding element in `arrowImg` array within `include/arrow_images.h`.
+
+\[日本語\]
+
+1. GIMPを画像を開く。
+1. 「ファイル」 > 「名前をつけてエクスポート」をクリックする。
+1. 「ファイル形式の選択」をクリックする。
+1. 「C ソースコード」を選択する。
+1. 「エクスポート」ボタンをクリックする。
+1. エクスポートされたファイルを開く。
+1. ダブルクォーテーションで囲まれたデータ部をコピーし、　`include/arrow_images.h` の `arrowImg` 配列内の要素と置き換える。
 
 # Related Projects / 関連プロジェクト
 
