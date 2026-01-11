@@ -8,6 +8,28 @@ This project implements a crawler robot that receives movement commands via [ESP
 
 ![video](video.gif)
 
+# Story
+
+It all began with a simple question:
+"What if a robot could show what it’s thinking while it moves?"
+
+Crawler robots are excellent at overcoming obstacles, but they often feel silent and purely mechanical. I wanted to give mine something more—a way to express its intentions. To achieve this, I added a 16x16 WS2812B LED matrix to the front of the robot. Rather than serving as a static decoration, the display became the robot's "face."
+
+When the robot moves forward, a bold arrow appears. When it turns, the arrow shifts to match its direction. These small visual cues transform the robot from a cold machine into something that feels more like a tiny creature with purpose and awareness.
+
+The robot receives its movement commands wirelessly using the [ESP-NOW protocol](https://www.espressif.com/en/solutions/low-power-solutions/esp-now). At the heart of the system is a [Seeed Studio XIAO ESP32-C6 microcontroller](https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/), which manages both motion control and display logic. A [Toshiba TB6612FNG dual motor driver](https://aliexpress.com/item/1005005973846875.html) powers the crawler's motors, while the [16x16 WS2812B LED dot-matrix panel](https://aliexpress.com/item/4000544584524.html) brings its actions to life with bright, crisp arrow animations.
+
+\[日本語\]
+
+すべては、こんな素朴な疑問から始まりました。
+「ロボットが動きながら、自分の考えを“見せる”ことができたらどうだろう？」
+
+クローラーロボットは走破性に優れていますが、どこか無言で、ただの機械のようにも感じられます。そこで私は、このロボットに「意思を表現する手段」を与えたいと考えました。その答えが、ロボットの上部に取り付けた 16×16のLEDドットマトリクスディスプレイです。単なる装飾ではなく、この表示をロボットの「顔」として機能させました。
+
+前進するときには太い矢印が表示され、旋回すると矢印も進行方向に合わせて変化します。こうした小さな視覚的表現によって、ロボットは冷たい機械から、目的と意識を持った小さな生き物のような存在へと変わっていきます。
+
+ロボットの動作指令は [ESP-NOW プロトコル](https://www.espressif.com/en/solutions/low-power-solutions/esp-now) を用いて無線で送信されます。中核となるのは [Seeed Studio XIAO ESP32-C6](https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/) マイコンで、走行制御と表示制御の両方を担っています。モーターの駆動には [東芝製TB6612FNGデュアルモータードライバー](https://aliexpress.com/item/1005005973846875.html) を使用し、[16×16のWS2812B LEDドットマトリクス](https://aliexpress.com/item/4000544584524.html) が、明るくシャープな矢印アニメーションによってロボットの動きを視覚的に表現します。
+
 # Hardware Requirements / ハードウェア要件
 
 ## Components / コンポーネント
