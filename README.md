@@ -1,6 +1,6 @@
 # Overview / 概要
 
-This project implements a crawler robot that receives movement commands via [ESP-NOW protocol](https://www.espressif.com/en/solutions/low-power-solutions/esp-now) and displays animated directional arrows on a 16x16 LED dot-matrix.
+This project implements a crawler robot that receives movement commands via the [ESP-NOW protocol](https://www.espressif.com/en/solutions/low-power-solutions/esp-now) and displays animated directional arrows on a 16x16 LED dot-matrix display.
 
 \[日本語\]
 
