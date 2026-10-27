@@ -121,9 +121,9 @@ dotmatrix_crawler_robot/
 1. Click [File] > [Export As...].
 1. Click [Select File Type (By Extension)].
 1. Select [C source code].
-1. Click [Export] button.
+1. Click the [Export] button.
 1. Open the exported file.
-1. Copy the data section enclosed in double quotation marks and replace the corresponding element in `arrowImg` array within `include/arrow_images.h`.
+1. Copy the data section enclosed in double quotation marks and replace the corresponding element in the `arrowImg` array within `include/arrow_images.h`.
 
 \[日本語\]
 
