@@ -1,10 +1,10 @@
 # Overview / 概要
 
-This project implements a crawler robot that receives movement commands via the [ESP-NOW protocol](https://www.espressif.com/en/solutions/low-power-solutions/esp-now) and displays animated directional arrows on a 16x16 LED dot-matrix display.
+A crawler robot with a face: it takes movement commands over the [ESP-NOW protocol](https://www.espressif.com/en/solutions/low-power-solutions/esp-now) and shows its next move as animated arrows on a 16×16 LED matrix display. The arrows shift to match the robot's direction — forward, turning, and so on — so you can see what it's "thinking" as it moves.
 
 \[日本語\]
 
-[ESP-NOWプロトコル](https://www.espressif.com/en/solutions/low-power-solutions/esp-now) で操作できるクローラーロボットを作ってみました。ジョイスティックから送った指示に合わせて走り、走行方向を16x16のLEDドットマトリックスに表示します。
+「顔」を持つクローラーロボットです。[ESP-NOWプロトコル](https://www.espressif.com/en/solutions/low-power-solutions/esp-now)経由で移動コマンドを受け取り、次にどのような動きをするかを16×16のLEDマトリックスディスプレイ上にアニメーションの矢印で表示します。矢印はロボットの進行方向（前進や旋回など）に合わせて変化するため、ロボットが移動中に何を「考えている」のかを一目で把握できます。
 
 ![video](video.gif)
 
